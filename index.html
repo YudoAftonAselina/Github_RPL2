@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Pertama Saya - GitHub Pages</title>
+    <style>
+        /* Reset dan Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            color: #4a5568;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .card h2 {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .card p {
+            color: #718096;
+            margin-bottom: 1rem;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: #4a5568;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #667eea;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* GitHub Badge */
+        .github-badge {
+            background: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="fade-in">
+            <div class="logo">🚀</div>
+            <h1>Selamat Datang di GitHub Pages!</h1>
+            <p class="subtitle">Website pertama saya yang dihosting gratis dengan GitHub Pages</p>
+            <div class="github-badge">
+                <span>⭐ Powered by GitHub Pages</span>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Content -->
+            <div class="card fade-in">
+                <h2>🎉 Selamat! Website Pertama Anda Live!</h2>
+                <p>Ini adalah contoh website statis yang dihosting menggunakan <strong>GitHub Pages</strong>. Dengan teknologi ini, Anda bisa menampilkan portfolio, blog, atau project website sederhana secara gratis!</p>
+                
+                <h3>✨ Fitur yang Digunakan:</h3>
+                <ul style="color: #718096; margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li>Responsive Design (Mobile Friendly)</li>
+                    <li>Modern CSS dengan Gradient Background</li>
+                    <li>Flexbox & Grid Layout</li>
+                    <li>CSS Animations</li>
+                    <li>Glass Morphism Effect</li>
+                </ul>
+
+                <a href="#learn-more" class="btn">Pelajari Lebih Lanjut</a>
+            </div>
+
+            <!-- Right Content -->
+            <div class="card fade-in">
+                <h2>📊 Status Project</h2>
+                <p><strong>Nama Project:</strong> Website GitHub Pages</p>
+                <p><strong>Teknologi:</strong> HTML5 + CSS3</p>
+                <p><strong>Hosting:</strong> GitHub Pages</p>
+                <p><strong>Status:</strong> <span style="color: #48bb78;">● Live</span></p>
+                
+                <div style="margin-top: 1.5rem;">
+                    <h4>🚀 Next Steps:</h4>
+                    <ol style="color: #718096; margin-left: 1.5rem;">
+                        <li>Customize konten</li>
+                        <li>Tambahkan JavaScript</li>
+                        <li>Connect domain custom</li>
+                        <li>Deploy project lain</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <div class="feature fade-in">
+                <div class="feature-icon">💻</div>
+                <h3>Responsive</h3>
+                <p>Tampil sempurna di semua device</p>
+            </div>
+            <div class="feature fade-in">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Loading</h3>
+                <p>Optimized untuk kecepatan terbaik</p>
+            </div>
+            <div class="feature fade-in">
+                <div class="feature-icon">🎨</div>
+                <h3>Modern Design</h3>
+                <p>Dengan gradient dan efek glassmorphism</p>
+            </div>
+            <div class="feature fade-in">
+                <div class="feature-icon">🔧</div>
+                <h3>Easy to Customize</h3>
+                <p>Edit kode sesuai kebutuhan Anda</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="fade-in">
+            <h3>Dibuat dengan ❤️ untuk Praktek GitHub Pages</h3>
+            <p>SMK - Kelas Git & GitHub</p>
+            
+            <div class="social-links">
+                <a href="#" title="GitHub">📂</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="Email">✉️</a>
+            </div>
+            
+            <p style="color: #718096; font-size: 0.9rem; margin-top: 1rem;">
+                &copy; 2024 Website GitHub Pages. All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple JavaScript untuk interaksi
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tambahkan efek smooth scroll untuk navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Tambahkan efek hover dinamis
+            const cards = document.querySelectorAll('.card, .feature');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Console log welcome message
+            console.log('🚀 Website GitHub Pages berhasil di-load!');
+            console.log('💡 Edit file index.html untuk customisasi website Anda!');
+        });
+    </script>
+</body>
+</html>
